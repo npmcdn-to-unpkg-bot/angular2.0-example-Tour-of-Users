@@ -5,3 +5,5 @@
 2. Use `npm install`
 
 3. Run `npm start` and run `npm run tsc`
+
+4. Run `npm run lite`
