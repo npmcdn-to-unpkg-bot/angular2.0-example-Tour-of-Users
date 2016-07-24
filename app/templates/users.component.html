@@ -1,0 +1,21 @@
+    <h2>My Heroes</h2>
+    <ul class="heroes">
+      <li *ngFor="let user of users" (click)="onSelect(user)" [class.selected]="user === selectedUser">
+        <span class="hero-element">
+          <span class="badge">{{user.id}}</span> {{user.nombre}}
+        </span>
+        <button class="delete-button" (click)="deleteUser(user, $event)">Delete</button>
+      </li>
+    </ul>
+    <div class="error" *ngIf="error">fdfdff</div>
+    <button (click)="addUser()">Add New user</button>
+    <div *ngIf="addingUser">
+    	<h2>dada</h2>
+      <my-user-detail (close)="close($event)"></my-user-detail>
+    </div>
+    <div *ngIf="selectedUser">
+      <h2>
+        {{selectedUser.nombre | uppercase}} is my hero
+      </h2>
+      <button (click)="gotoDetail()">View Details</button>
+    </div>
